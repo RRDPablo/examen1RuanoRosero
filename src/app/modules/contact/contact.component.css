@@ -1,0 +1,17 @@
+.text-danger {
+    color: red;
+    font-size: 0.875em;
+  }
+  
+  .p-fluid .p-field {
+    margin-bottom: 1.5rem;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    margin-top: 1.5rem;
+  }
+  

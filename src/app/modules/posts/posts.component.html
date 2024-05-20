@@ -1,0 +1,13 @@
+<div class="container" *ngIf="posts.length === 0">
+    Cargando publicaciones...
+  </div>
+  <div class="container" *ngIf="posts.length > 0">
+    <ul class="post-list">
+      <li class="post-item" *ngFor="let post of posts">
+        <h3 class="post-title">{{ post.title }}</h3>
+        <p class="post-body">{{ post.body }}</p>
+      </li>
+    </ul>
+  </div>
+  
+  

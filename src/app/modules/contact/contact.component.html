@@ -1,0 +1,30 @@
+<br>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col">
+        <label for="name">Nombre</label>
+        <input id="name" type="text" pInputText formControlName="name" />
+        <div *ngIf="f['name'].invalid && (f['name'].dirty || f['name'].touched)" class="text-danger">
+          <div *ngIf="f['name'].errors?.['required']">Nombre es requerido.</div>
+        </div>
+      </div>
+      <div class="p-field p-col">
+        <label for="email">Correo Electrónico</label>
+        <input id="email" type="email" pInputText formControlName="email" />
+        <div *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)" class="text-danger">
+          <div *ngIf="f['email'].errors?.['required']">Correo electrónico es requerido.</div>
+          <div *ngIf="f['email'].errors?.['email']">Correo electrónico no válido.</div>
+        </div>
+      </div>
+      <div class="p-field p-col">
+        <label for="message">Mensaje</label>
+        <textarea id="message" rows="5" pInputTextarea formControlName="message"></textarea>
+        <div *ngIf="f['message'].invalid && (f['message'].dirty || f['message'].touched)" class="text-danger">
+          <div *ngIf="f['message'].errors?.['required']">Mensaje es requerido.</div>
+          <div *ngIf="f['message'].errors?.['minlength']">El mensaje debe tener al menos 10 caracteres.</div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" pButton pRipple label="Submit" class="p-button-success">Enviar</button>
+  </form>
+  
